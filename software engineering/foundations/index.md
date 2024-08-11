@@ -22,8 +22,8 @@ tools are stitched together using application code
 Sample System
 </p>  
 
-# Three Important Factors For a Good System  
+## Three Important Factors For a Good System  
  
- ## [Reliability](reliability.md#reliability)  
- ## [Scalability](scalability.md#scalability)  
- ## [Maintainability](maintainability.md#maintainability)
+ ### [Reliability](reliability.md#reliability)  
+ ### [Scalability](scalability.md#scalability)  
+ ### [Maintainability](maintainability.md#maintainability)
