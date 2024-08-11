@@ -32,3 +32,4 @@ second line
 
 
 
+![fix image](./images/sample-system.png)
