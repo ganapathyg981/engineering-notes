@@ -1,0 +1,8 @@
+https://github.com/donnemartin/system-design-primer/blob/master/README.md  
+https://newsletter.systemdesign.one/  
+https://levelupsoftwareengineering.substack.com/  
+https://thepeoplessoftwareengineer.substack.com/  
+https://blog.awesomesoftwareengineer.com/  
+https://fatsoftwareengineer.substack.com/  
+https://substack.com/@ryanlpeterman  
+https://medium.com/@liangg.guo
