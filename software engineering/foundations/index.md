@@ -20,8 +20,10 @@ tools are stitched together using application code
   <img src="../../images/sample-system.png" alt="Sublime's custom image"/>
 <br>
 Sample System
-</p>
+</p>  
 
-[Reliability](reliability.md#reliability)  
-[Scalability](scalability.md#scalability)  
-[Maintainability](maintainability.md#maintainability)
+# Three Important Factors For a Good System  
+ 
+ ## [Reliability](reliability.md#reliability)  
+ ## [Scalability](scalability.md#scalability)  
+ ## [Maintainability](maintainability.md#maintainability)
