@@ -22,7 +22,7 @@ tools are stitched together using application code
 Sample System
 </p>
 
-[Scalability](#scalability)
+[Scalability](#scalability)  
 [Maintainability](#maintainability)
 
 
@@ -198,7 +198,7 @@ measurements”
 - Vertical Scaling (Big Machine)
 - Horizontal Scaling (More Machine)  
 
-# [Maintainability] 
+# Maintainability
 
 The major cost off owning the software is not the infra but to maintain it
 - fixing bugs
