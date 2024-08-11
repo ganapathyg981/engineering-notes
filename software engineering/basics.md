@@ -22,6 +22,9 @@ tools are stitched together using application code
 Sample System
 </p>
 
+[Scalability](#scalability)
+[Maintainability](#maintainability)
+
 
 # Reliability
 System should be 
@@ -216,4 +219,4 @@ incomplete) software, but good software cannot run reliably with bad operations
 Simple to understand, use abstractions. Do all the 
 ## Evolvability
 System should be easy to change
-[Go to Reliability](#reliability)
+
