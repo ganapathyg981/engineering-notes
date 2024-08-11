@@ -1,5 +1,5 @@
 # Foundations
-- Nowadays CPU is barely a limiting factor for most of the apps, it the memory
+Nowadays CPU is barely a limiting factor for most of the apps, it the memory
 
 
 A data-intensive application is typically built from standard building blocks that provide commonly
@@ -16,10 +16,11 @@ single tool can no longer meet all of its data processing and storage needs. Ins
 broken down into tasks that can be performed efficiently on a single tool, and those different
 tools are stitched together using application code
 
-<div style="text-align: center;">
-    <img src="../images/sample-system.png" alt="sample system" style="display: block; margin: 0 auto;">
-    <p>sample system</p>
-</div>
+<p align="center">
+  <img src="../images/sample-system.png" alt="Sublime's custom image"/>
+<br>
+sample system
+</p>
 
 # Reliability
 System should be 
