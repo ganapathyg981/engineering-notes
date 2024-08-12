@@ -5,4 +5,5 @@ https://thepeoplessoftwareengineer.substack.com/
 https://blog.awesomesoftwareengineer.com/  
 https://fatsoftwareengineer.substack.com/  
 https://substack.com/@ryanlpeterman  
-https://medium.com/@liangg.guo
+https://medium.com/@liangg.guo  
+https://interviewing.io/guides/system-design-interview
