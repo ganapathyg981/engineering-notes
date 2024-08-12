@@ -1,7 +1,6 @@
 # Hello
 ## Hello
 ### Hello
-
 I put two spaces for line break  
 second line
 
@@ -28,8 +27,8 @@ second line
   - adasdad
 
 
-[this](https://google.com)
-
-
-
-![fix image](./images/sample-system.png)
+<p align="center" style="width:50vw">
+  <img src="dssdsdsd" alt="Sublime's custom image"/>
+<br>
+<i>sdsdsdsdsd</i>
+</p>  
