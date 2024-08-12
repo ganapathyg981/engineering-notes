@@ -19,7 +19,7 @@ You go through levels, you must use queue for doing this. 1239565 -> for above t
 - loop through level size and poll node do stuff
 - add left and right to queue
 
-## Invert Binary Tree
+### Invert Binary Tree
 You are given the root of a binary tree root. Invert the binary tree and return its root.  
 <p align="center" style="width:50vw">
   <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/ac124ee6-207f-41f6-3aaa-dfb35815f200/public" alt="Sublime's custom image"/>
@@ -30,7 +30,7 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 - Do DFS
 - swap left and right nodes and return node
 
-## Max height of B'Tree
+### Max height of B'Tree
 <p align="center" style="width:50vw">
   <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/5ea6da77-7e43-43e0-dd9d-e879ca0b1600/public" alt="Sublime's custom image"/>
 <br>
@@ -41,7 +41,7 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 - base case at null node return 0
 - then return max(1+height(left) & 1+height(right))
 
-## Same Tree
+### Same Tree
 <p align="center" style="width:50vw">
   <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/e78fc10c-4692-471f-5261-61e9be4f3a00/public" alt="Sublime's custom image"/>
 <br>
@@ -54,7 +54,7 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 - if nodes are not equal return false;
 - return on same(left) and same(right)
 
-# Sub-tree 
+### Sub-tree 
 <p align="center" style="width:50vw">
   <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/2991a77a-9664-46ed-528d-019e392f7400/public" alt="Sublime's custom image"/>
 <br>
@@ -67,7 +67,7 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 - call same tree on root, if yes return true
 - return  isSubTree(left) || isSubTree(right)  
 
-## Lowest Common Ancestor of BST
+### Lowest Common Ancestor of BST
 <p align="center" style="width:50vw">
   <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/2080ee6a-3d27-4cd5-0db2-07672ead8200/public" alt="Sublime's custom image"/>
 <br>
@@ -86,5 +86,44 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 
 you can ignore to call a left node and return null if left is > a&&b same other way  
 
-# Valid BST
+### Valid BST
+<p align="center" style="width:50vw">
+  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/18f9a316-8dc2-4e11-d304-51204454ac00/public" alt="Sublime's custom image"/>
+<br>
+<i>Yes! it's a BST</i>
+</p>  
+<p align="center" style="width:50vw">
+  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/6f14cb8d-efad-4221-2beb-fba2b19c8a00/public" alt="Sublime's custom image"/>
+<br>
+<i>No shit!</i>
+</p>    
+
+- ok.. so the trick part is, not only left<root<right
+- also all stuff under left should be lesser than root
+- all stuff under right should be greater than root
+- So we pass alone some boundaries top down
+- take left right as imaginary boundary to each node
+- condition should be like node is between left and right
+- left = INT_MIN right = INT_MAX
+- when you go to left node right will become current
+- when you go to a right node left will become current
+
+### Kth smallest element in BST
+<p align="center" style="width:50vw">
+  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/dca6c42d-2327-4036-f7f2-3e99d8203100/public" alt="Sublime's custom image"/>
+<br>
+<i>1st smallest is 2, 2nd smallest is 3</i>
+</p>  
+
+- as we came to know before, inorder is in sorted for BST
+- take in a state having the output and counter for inorder
+- everytime you process an element increment counter
+- if(counter =k) return that output
+
+### Construct tree from inorder and preorder
+<p align="center" style="width:50vw">
+  <img src="dssdsdsd" alt="Sublime's custom image"/>
+<br>
+<i>sdsdsdsdsd</i>
+</p>  
 
