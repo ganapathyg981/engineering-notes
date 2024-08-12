@@ -67,7 +67,7 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 - call same tree on root, if yes return true
 - return  isSubTree(left) || isSubTree(right)  
 
-#Lowest Common Ancestor of BST
+## Lowest Common Ancestor of BST
 <p align="center" style="width:50vw">
   <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/2080ee6a-3d27-4cd5-0db2-07672ead8200/public" alt="Sublime's custom image"/>
 <br>
