@@ -6,4 +6,5 @@ https://blog.awesomesoftwareengineer.com/
 https://fatsoftwareengineer.substack.com/  
 https://substack.com/@ryanlpeterman  
 https://medium.com/@liangg.guo  
-https://interviewing.io/guides/system-design-interview
+https://interviewing.io/guides/system-design-interview  
+https://youtube.com/@sdfc?feature=shared
