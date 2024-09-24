@@ -141,4 +141,10 @@ you can ignore to call a left node and return null if left is > a&&b same other 
 </p>  
 
 
+### Equal partition sum
 
+<p align="center" style="width:50vw">
+  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/9896b041-9021-44c2-ab3e-5cff76adf100/public" alt="Sublime's custom image"/>
+<br>
+<i>max path is 6 </i>
+</p>  
