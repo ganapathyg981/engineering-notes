@@ -230,3 +230,26 @@ Can be used for
 ## Minimum Spanning Tree
 - ### Prim's Algo 
 - ### Kruskal's Also
+
+## Problems & Learnings
+### Rotten Oranges   
+   You are given an m x n grid where each cell can have one of three values:
+  - 0 representing an empty cell
+  - 1 representing a fresh orange
+  - 2 representing a rotten orange  
+  
+Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.
+
+Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.
+<p align="center" style="width:50vw">
+  <img src="https://assets.leetcode.com/uploads/2019/02/16/oranges.png" alt="Undirected Graph"/>
+  <br>
+  <i>Rotten Oranges</i>
+</p>
+
+#### Intuitions & Solution
+- You have to spread from a point/group, so BFS
+- Source is rotten oranges to get a queue with **indexes of rotten oranges**
+- Have a count of fresh oranges for edge cases
+- Do **BFS with levels by queue size** so that you know each step
+- Have an array of possible move offsets
