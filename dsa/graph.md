@@ -213,13 +213,17 @@ An adjacency matrix is a 2D array where each cell at position (i, j) indicates t
 - ### DFS with Stack
 - ### Kahn's Algo
 ## Shortest Path
-- ### Dijkstra
-- ### Bellman-Ford
-- ### Floyd-Warshall
+- ### BFS (when no weights)
+- ### Dijkstra (when weighted edges)
+- ### Bellman-Ford (when negative weight edges)
+- ### Floyd-Warshall (when distance needed for all to all)
 ## Disjoint Set
+Can be used for
+- Grouping connected nodes
+- Getting some information like count of nodes/ min weight of edges/ sum of edges etc..
 - ### Implementation
-  - #### Arrays
-  - #### Map
+  - #### Arrays for fixed nodes
+  - #### Map for sparse nodes
 - ### Minimum Spanning Tree (Kruskal)
 - ### Connected Components
 - ### Redundant connection removal
