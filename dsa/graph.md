@@ -253,3 +253,26 @@ Return the minimum number of minutes that must elapse until no cell has a fresh 
 - Have a count of fresh oranges for edge cases
 - Do **BFS with levels by queue size** so that you know each step
 - Have an array of possible move offsets
+
+### Surrounded Regions
+You are given a 2-D matrix board containing 'X' and 'O' characters.
+
+If a continous, four-directionally connected group of 'O's is surrounded by 'X's, it is considered to be surrounded.
+
+Change all surrounded regions of 'O's to 'X's and do so in-place by modifying the input board.
+
+<p align="center" style="width:50vw">
+  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/9e6916bf-0e25-4e15-9619-cbc42d2d8f00/public" alt="Undirected Graph"/>
+  <br>
+  <i>Surrounded Regions</i>
+</p>
+
+#### Intuitions & Solution
+- You had to think a little different here
+- You cannot simply select all Os and BFS to see surroundings, its a little complex
+- There are only two possibilities, O is surrounded by X or O is surrounded by Border
+- If you find all Os which is by border, then all other Os are for sure surrounded by X
+- Do a DFS on Os by border and mark them as #
+- You will have a grid of O,X and #
+- replace Os with X for the goal, replace # with O to restore original grid
+
