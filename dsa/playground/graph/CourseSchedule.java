@@ -5,8 +5,13 @@ import java.util.*;
 public class CourseSchedule {
 
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
-        // Your solution here
+        int [] state = new int[numCourses];
+
         return false;
+    }
+
+    public static boolean dfs() {
+
     }
 
     public static void main(String[] args) {
