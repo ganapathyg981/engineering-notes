@@ -23,8 +23,6 @@ Graphs are particularly useful when you need to represent and analyze relationsh
   - DFS
   - 
 
-Graphs can model both simple and complex relationships, making them versatile for various applications in computer science, mathematics, and engineering.
-
 ## Types of Graphs
 
 ### Directed and Undirected
