@@ -29,8 +29,6 @@ Graphs are particularly useful when you need to represent and analyze relationsh
   - DFS with parent passing, ignore if next node is parent
   - Union find disjoint set, only with parent u can do it, coz we dont need depth info
 
-Graphs can model both simple and complex relationships, making them versatile for various applications in computer science, mathematics, and engineering.
-
 ## Types of Graphs
 
 ### Directed and Undirected
