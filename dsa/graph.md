@@ -19,9 +19,15 @@ Graphs are particularly useful when you need to represent and analyze relationsh
   - Floyd-Warshall for all to all distance
 - #### Connected components, Minimum/maximum of connected components, Number of nodes in connected components, Redundant Nodes/Connections, Minimum Spanning Tree (Kruskal's Algo), Merging intervals??, check connectivity
   - Disjoint Set
+  - Only on undirected
 - #### Number of islands/ anything like that
   - DFS
-  - 
+- #### DAG/ Directed Graph/ Finding order/ Detecting cycles
+  - Topological sort with Stack
+  - Cycle detection with Visited/Visiting/Unvisited states
+- #### Undirected cycle detection / Valid tree
+  - DFS with parent passing, ignore if next node is parent
+  - Union find disjoint set, only with parent u can do it, coz we dont need depth info
 
 Graphs can model both simple and complex relationships, making them versatile for various applications in computer science, mathematics, and engineering.
 
@@ -144,4 +150,3 @@ Change all surrounded regions of 'O's to 'X's and do so in-place by modifying th
 - Do a DFS on Os by border and mark them as #
 - You will have a grid of O,X and #
 - replace Os with X for the goal, replace # with O to restore original grid
-
