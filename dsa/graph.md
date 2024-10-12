@@ -221,19 +221,19 @@ treasure chest than the value should remain INF.
 Assume the grid can only be traversed up, down, left, or right.
 
 ````json
-"Input": [
-  [2147483647,-1,0,2147483647],
-  [2147483647,2147483647,2147483647,-1],
-  [2147483647,-1,2147483647,-1],
-  [0,-1,2147483647,2147483647]
-]
-
-"Output": [
-  [3,-1,0,1],
-  [2,2,1,-1],
-  [1,-1,2,-1],
-  [0,-1,3,4]
-]
+  "Input": [
+    [2147483647,-1,0,2147483647],
+    [2147483647,2147483647,2147483647,-1],
+    [2147483647,-1,2147483647,-1],
+    [0,-1,2147483647,2147483647]
+  ]
+  
+  "Output": [
+    [3,-1,0,1],
+    [2,2,1,-1],
+    [1,-1,2,-1],
+    [0,-1,3,4]
+  ]
 ````
 #### Intuitions & Solutions
 - Ok, this is BFS!! Why? you have to find the shortest distance / unweighted graph
@@ -257,13 +257,13 @@ Find all cells where water can flow from that cell to both the Pacific and Atlan
 </p>
 
 ```
-Input: heights = [
-  [4,2,7,3,4],
-  [7,4,6,4,7],
-  [6,3,5,3,6]
-]
-
-Output: [[0,2],[0,4],[1,0],[1,1],[1,2],[1,3],[1,4],[2,0]]
+  Input: heights = [
+    [4,2,7,3,4],
+    [7,4,6,4,7],
+    [6,3,5,3,6]
+  ]
+  
+  Output: [[0,2],[0,4],[1,0],[1,1],[1,2],[1,3],[1,4],[2,0]]
 
 ```
 
@@ -276,12 +276,16 @@ There are a total of numCourses courses you are required to take, labeled from 0
 
 Return true if it is possible to finish all courses, otherwise return false.
 ```
-Input: numCourses = 2, prerequisites = [[0,1]]
-Output: true //Explanation: First take course 1 (no prerequisites) and then take course 0.
-Input: numCourses = 2, prerequisites = [[0,1],[1,0]]
-Output: false // Explanation: In order to take course 1 you must take course 0,
-and to take course 0 you must take course 1. So it is impossible.
+  Input: numCourses = 2, prerequisites = [[0,1]]
+  Output: true //Explanation: First take course 1 (no prerequisites) and then take course 0.
+  Input: numCourses = 2, prerequisites = [[0,1],[1,0]]
+  Output: false // Explanation: In order to take course 1 you must take course 0,
+  and to take course 0 you must take course 1. So it is impossible.
 ```
+#### Intuitions & Solution
+- Build a cycle detection DFS and have a stack for topo sort
+- if cycle detected,then false
+- if stack size is not node size, then false
 ### Course Schedule II
 You are given an array prerequisites where prerequisites[i] = [a, b] indicates that you must take course b first if you want to take course a.
 
@@ -289,12 +293,17 @@ For example, the pair [0, 1], indicates that to take course 0 you have to first 
 There are a total of numCourses courses you are required to take, labeled from 0 to numCourses - 1.
 
 Return a valid ordering of courses you can take to finish all courses. If there are many valid answers, return any of them. If it's not possible to finish all courses, return an empty array.
-``
-Input: numCourses = 3, prerequisites = [[1,0]]
-
-Output: [0,1,2]
-Explanation: We must ensure that course 0 is taken before course 1.
-``
+```
+  Input: numCourses = 3, prerequisites = [[1,0]]
+  
+  Output: [0,1,2]
+  Explanation: We must ensure that course 0 is taken before course 1.
+```
+#### Intuitions & Solution
+- Build a cycle detection DFS and have a stack for topo sort
+- if cycle detected,then false
+- if stack size is not node size, then false
+- else return stack popped list.
 ### Course Schedule IV
 There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course ai first if you want to take course bi.
 
@@ -311,12 +320,24 @@ Return a boolean array answer, where answer[j] is the answer to the jth query.
 </p>
 
 ```
-Input: numCourses = 2, prerequisites = [[1,0]], queries = [[0,1],[1,0]]
-Output: [false,true]
-Explanation: The pair [1, 0] indicates that you have to take course 1 before you can take course 0.
-Course 0 is not a prerequisite of course 1, but the opposite is true.
+  Input: numCourses = 2, prerequisites = [[1,0]], queries = [[0,1],[1,0]]
+  Output: [false,true]
+  Explanation: The pair [1, 0] indicates that you have to take course 1 before you can take course 0.
+  Course 0 is not a prerequisite of course 1, but the opposite is true.
 ```
 ### Find the Town Judge
+In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge.
+
+If the town judge exists, then:
+
+- The town judge trusts nobody.
+- Everybody (except for the town judge) trusts the town judge.
+- There is exactly one person that satisfies properties 1 and 2.  
+
+You are given an array trust where trust[i] = [ai, bi] representing that the person labeled ai trusts the person labeled bi.  
+If a trust relationship does not exist in trust array, then such a trust relationship does not exist.
+
+Return the label of the town judge if the town judge exists and can be identified, or return -1 otherwise.
 ### Count Sub Islands
 ### Reorder Routes to Make All Paths Lead To The City
 ### Snakes and Ladders
