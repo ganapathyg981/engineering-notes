@@ -210,11 +210,112 @@ public List<Node> neighbors;
   - To prevent duplicate traversal leading to infinite loops
   - Also, to keep one for one clone. See the code if required
 ### Walls and Gates
+You are given a m × n 2D grid initialized with these three possible values:
 
+-1 - A water cell that can not be traversed.
+0 - A treasure chest.
+INF - A land cell that can be traversed. We use the integer 2^31 - 1 = 2147483647 to represent INF.
+Fill each land cell with the distance to its nearest treasure chest. If a land cell cannot reach a
+treasure chest than the value should remain INF.
+
+Assume the grid can only be traversed up, down, left, or right.
+
+````json
+"Input": [
+  [2147483647,-1,0,2147483647],
+  [2147483647,2147483647,2147483647,-1],
+  [2147483647,-1,2147483647,-1],
+  [0,-1,2147483647,2147483647]
+]
+
+"Output": [
+  [3,-1,0,1],
+  [2,2,1,-1],
+  [1,-1,2,-1],
+  [0,-1,3,4]
+]
+````
+#### Intuitions & Solutions
+- Ok, this is BFS!! Why? you have to find the shortest distance / unweighted graph
+- Then since it is for multiple sources, this is multi source BFS
+- Also dummy, the distance from land to treasure is same as the distance from treasure to land
+- Add all treasure as source to queue
+- Do a BFS on unvisited nodes
+- <b>If you have already visited a land cell, other farthest cells would not overwrite visited cells</b>
 ### Pacific Atlantic Water Flow
+You are given a rectangular island heights where heights[r][c] represents the height above sea level of the cell at coordinate (r, c).
+
+The islands borders the Pacific Ocean from the top and left sides, and borders the Atlantic Ocean from the bottom and right sides.
+
+Water can flow in four directions (up, down, left, or right) from a cell to a neighboring cell with height equal or lower. Water can also flow into the ocean from cells adjacent to the ocean.
+
+Find all cells where water can flow from that cell to both the Pacific and Atlantic oceans. Return it as a 2D list where each element is a list [r, c] representing the row and column of the cell. You may return the answer in any order.
+<p align="center" style="width:50vw">
+  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/3899fae1-ab18-4d6b-15b4-c7f7aa224700/public" alt="Undirected Graph"/>
+  <br>
+  <i></i>
+</p>
+
+```
+Input: heights = [
+  [4,2,7,3,4],
+  [7,4,6,4,7],
+  [6,3,5,3,6]
+]
+
+Output: [[0,2],[0,4],[1,0],[1,1],[1,2],[1,3],[1,4],[2,0]]
+
+```
+
 ### Course Schedule
+You are given an array prerequisites where prerequisites[i] = [a, b] indicates that you must take course b first if you want to take course a.
+
+The pair [0, 1], indicates that must take course 1 before taking course 0.
+
+There are a total of numCourses courses you are required to take, labeled from 0 to numCourses - 1.
+
+Return true if it is possible to finish all courses, otherwise return false.
+```
+Input: numCourses = 2, prerequisites = [[0,1]]
+Output: true //Explanation: First take course 1 (no prerequisites) and then take course 0.
+Input: numCourses = 2, prerequisites = [[0,1],[1,0]]
+Output: false // Explanation: In order to take course 1 you must take course 0,
+and to take course 0 you must take course 1. So it is impossible.
+```
 ### Course Schedule II
+You are given an array prerequisites where prerequisites[i] = [a, b] indicates that you must take course b first if you want to take course a.
+
+For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.
+There are a total of numCourses courses you are required to take, labeled from 0 to numCourses - 1.
+
+Return a valid ordering of courses you can take to finish all courses. If there are many valid answers, return any of them. If it's not possible to finish all courses, return an empty array.
+``
+Input: numCourses = 3, prerequisites = [[1,0]]
+
+Output: [0,1,2]
+Explanation: We must ensure that course 0 is taken before course 1.
+``
 ### Course Schedule IV
+There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course ai first if you want to take course bi.
+
+For example, the pair [0, 1] indicates that you have to take course 0 before you can take course 1.
+Prerequisites can also be indirect. If course a is a prerequisite of course b, and course b is a prerequisite of course c, then course a is a prerequisite of course c.
+
+You are also given an array queries where queries[j] = [uj, vj]. For the jth query, you should answer whether course uj is a prerequisite of course vj or not.
+
+Return a boolean array answer, where answer[j] is the answer to the jth query.
+<p align="center" style="width:50vw">
+  <img src="https://assets.leetcode.com/uploads/2021/05/01/courses4-1-graph.jpg" alt="Undirected Graph"/>
+  <br>
+  <i></i>
+</p>
+
+```
+Input: numCourses = 2, prerequisites = [[1,0]], queries = [[0,1],[1,0]]
+Output: [false,true]
+Explanation: The pair [1, 0] indicates that you have to take course 1 before you can take course 0.
+Course 0 is not a prerequisite of course 1, but the opposite is true.
+```
 ### Find the Town Judge
 ### Count Sub Islands
 ### Reorder Routes to Make All Paths Lead To The City
@@ -228,7 +329,7 @@ public List<Node> neighbors;
 ### Number of connected components in an undirected graph
 ### Redundant connection
 ### Accounts merge
-### Find closest node to given two node
+### Find the closest node to given two node
 ### As Far from Land as Possible
 ### Shortest Path with Alternating Colors
 ### Minimum Fuel Cost to Report to the Capital
