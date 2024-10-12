@@ -148,3 +148,101 @@ Change all surrounded regions of 'O's to 'X's and do so in-place by modifying th
 - Do a DFS on Os by border and mark them as #
 - You will have a grid of O,X and #
 - replace Os with X for the goal, replace # with O to restore original grid
+
+### Number of Islands
+Given a 2D grid grid where '1' represents land and '0' represents water, count and return the number of islands.
+
+An island is formed by connecting adjacent lands horizontally or vertically and is surrounded by water.
+You may assume water is surrounding the grid (i.e., all the edges are water)  
+````
+Input: grid = [
+["0","1","1","1","0"],
+["0","1","0","1","0"],
+["1","1","0","0","0"],
+["0","0","0","0","0"]
+]
+Output: 1
+````
+####  Intuitions & Solution
+- It's a dfs code for sure. Why? You have to drill down to the island
+- You should have offset. to see possible moves, Also keep track of count in dfs.
+- And have a visitedSet, actually mark cells as zero for visited,
+- <b>Remember, For noting 2-Dimensions as visited, use a 2D array</b>
+- For every break in the outer iteration / every return from DFS, you keep adding counts
+### Max Area of Island
+Max Area of Island
+You are given a matrix grid where grid[i] is either a 0 (representing water) or 1 (representing land).
+
+An island is defined as a group of 1's connected horizontally or vertically. You may assume all four edges of the grid are surrounded by water.
+
+The area of an island is defined as the number of cells within the island.
+
+Return the maximum area of an island in grid. If no island exists, return 0.
+<p align="center" style="width:50vw">
+  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/8eeb491c-c8ff-4ed6-78ed-ce4cf87d7200/public" alt="Undirected Graph"/>
+  <br>
+  <i>Max Area of islands is 6</i>
+</p>
+
+### Clone Graph
+Given a node in a connected undirected graph, return a deep copy of the graph.
+
+Each node in the graph contains an integer value and a list of its neighbors.
+
+````java
+class Node {
+public int val;
+public List<Node> neighbors;
+}
+````
+
+<p align="center" style="width:50vw">
+  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/ca68c09d-4d0e-4d80-9c20-078c666cf900/public" alt="Undirected Graph"/>
+  <br>
+  <i>Clone this shit!</i>
+</p>
+
+#### Intuitions & Solution
+- Alright, we're doing a dfs and going deep into the given node
+- Create a root node, so that u can return to them asker
+- Have a modified DFS function, pass the source root, clone root
+- Also have a Map of original node to cloned nodes for the following reasons
+  - To prevent duplicate traversal leading to infinite loops
+  - Also, to keep one for one clone. See the code if required
+### Walls and Gates
+
+### Pacific Atlantic Water Flow
+### Course Schedule
+### Course Schedule II
+### Course Schedule IV
+### Find the Town Judge
+### Count Sub Islands
+### Reorder Routes to Make All Paths Lead To The City
+### Snakes and Ladders
+### Open The Lock
+### Find Eventual Safe States
+### Graph Valid Tree
+### Check If Move Is Legal
+### Shortest Bridge
+### Shortest path in binary matrix
+### Number of connected components in an undirected graph
+### Redundant connection
+### Accounts merge
+### Find closest node to given two node
+### As Far from Land as Possible
+### Shortest Path with Alternating Colors
+### Minimum Fuel Cost to Report to the Capital
+### Minimum Score of a Path Between Two Cities
+### Number of Enclaves
+### Minimum Number of Vertices to Reach all Nodes
+### Is Graph Bipartite?
+### Detonate the Maximum Bombs
+### Minimum Height Trees
+### Path with Maximum Gold
+### Word Ladder
+### Reconstruct Itinerary
+### Min Cost to Connect All Points
+### Network Delay Time
+### Swim In Rising Water
+### Alien Dictionary
+### Cheapest Flights Within K Stops
