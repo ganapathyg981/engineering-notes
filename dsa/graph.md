@@ -292,9 +292,16 @@ https://neetcode.io/problems/count-connected-components
 ## Redundant connection
 https://neetcode.io/problems/redundant-connection
 #### Intuitions & Solution
-
-## Accounts merge
-## Find the closest node to given two node
+- Bro, undirected redundant edge is cycle, union find all the way
+- do union on all edges
+- First edge to present cycle, is the culprit
+## Accounts merge (Code this when free, seems like a challenge)
+https://leetcode.com/problems/accounts-merge/description/
+#### Intuitions & Solution
+- Took a while to understand this is a connected component problem on union disjoint 
+- Since these aren't 'n' nodes, make DS1 implementation on a HashMap
+- Also have a email to name map.
+## Find the closest node to given two node  (Code this when free, seems like a challenge)
 ## As Far from Land as Possible
 ## Shortest Path with Alternating Colors
 ## Minimum Fuel Cost to Report to the Capital
