@@ -28,6 +28,7 @@ Graphs are particularly useful when you need to represent and analyze relationsh
 - #### Undirected cycle detection / Valid tree
   - DFS with parent passing, ignore if next node is parent
   - Union find disjoint set, only with parent u can do it, coz we dont need depth info
+- #### Weird shit questions might involve indegree and outdegree
 
 ## Types of Graphs
 
@@ -82,7 +83,6 @@ An adjacency matrix is a 2D array where each cell at position (i, j) indicates t
   3 0 1 0 0
 ```
 
-
 ## Topological Sort
 - ### DFS with Stack
 - ### Kahn's Algo
@@ -94,6 +94,7 @@ An adjacency matrix is a 2D array where each cell at position (i, j) indicates t
 ## Disjoint Set
 Can be used for
 - Grouping connected nodes
+- Only on undirected
 - Getting some information like count of nodes/ min weight of edges/ sum of edges etc..
 - ### Implementation
   - #### Arrays for fixed nodes
@@ -106,20 +107,7 @@ Can be used for
 - ### Kruskal's Also
 
 ## Problems & Learnings
-### Rotten Oranges   
-   You are given an m x n grid where each cell can have one of three values:
-  - 0 representing an empty cell
-  - 1 representing a fresh orange
-  - 2 representing a rotten orange  
-  
-Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.
-
-Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.
-<p align="center" style="width:50vw">
-  <img src="https://assets.leetcode.com/uploads/2019/02/16/oranges.png" alt="Undirected Graph"/>
-  <br>
-  <i>Rotten Oranges</i>
-</p>
+## Rotten Oranges
 
 #### Intuitions & Solution
 - You have to spread from a point/group, so BFS
@@ -128,17 +116,7 @@ Return the minimum number of minutes that must elapse until no cell has a fresh 
 - Do **BFS with levels by queue size** so that you know each step
 - Have an array of possible move offsets
 
-### Surrounded Regions
-You are given a 2-D matrix board containing 'X' and 'O' characters.
-If a continuous, four-directionally connected group of 'O's is surrounded by 'X's, it is considered to be surrounded.
-
-Change all surrounded regions of 'O's to 'X's and do so in-place by modifying the input board.
-
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/9e6916bf-0e25-4e15-9619-cbc42d2d8f00/public" alt="Undirected Graph"/>
-  <br>
-  <i>Surrounded Regions</i>
-</p>
+## Surrounded Regions
 
 #### Intuitions & Solution
 - You had to think a little different here
@@ -149,58 +127,16 @@ Change all surrounded regions of 'O's to 'X's and do so in-place by modifying th
 - You will have a grid of O,X and #
 - replace Os with X for the goal, replace # with O to restore original grid
 
-### Number of Islands
-Given a 2D grid grid where '1' represents land and '0' represents water, count and return the number of islands.
-
-An island is formed by connecting adjacent lands horizontally or vertically and is surrounded by water.
-You may assume water is surrounding the grid (i.e., all the edges are water)  
-````
-Input: grid = [
-["0","1","1","1","0"],
-["0","1","0","1","0"],
-["1","1","0","0","0"],
-["0","0","0","0","0"]
-]
-Output: 1
-````
+## Number of Islands
 ####  Intuitions & Solution
 - It's a dfs code for sure. Why? You have to drill down to the island
 - You should have offset. to see possible moves, Also keep track of count in dfs.
 - And have a visitedSet, actually mark cells as zero for visited,
 - <b>Remember, For noting 2-Dimensions as visited, use a 2D array</b>
 - For every break in the outer iteration / every return from DFS, you keep adding counts
-### Max Area of Island
-Max Area of Island
-You are given a matrix grid where grid[i] is either a 0 (representing water) or 1 (representing land).
+## Max Area of Island
 
-An island is defined as a group of 1's connected horizontally or vertically. You may assume all four edges of the grid are surrounded by water.
-
-The area of an island is defined as the number of cells within the island.
-
-Return the maximum area of an island in grid. If no island exists, return 0.
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/8eeb491c-c8ff-4ed6-78ed-ce4cf87d7200/public" alt="Undirected Graph"/>
-  <br>
-  <i>Max Area of islands is 6</i>
-</p>
-
-### Clone Graph
-Given a node in a connected undirected graph, return a deep copy of the graph.
-
-Each node in the graph contains an integer value and a list of its neighbors.
-
-````java
-class Node {
-public int val;
-public List<Node> neighbors;
-}
-````
-
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/ca68c09d-4d0e-4d80-9c20-078c666cf900/public" alt="Undirected Graph"/>
-  <br>
-  <i>Clone this shit!</i>
-</p>
+## Clone Graph
 
 #### Intuitions & Solution
 - Alright, we're doing a dfs and going deep into the given node
@@ -209,32 +145,7 @@ public List<Node> neighbors;
 - Also have a Map of original node to cloned nodes for the following reasons
   - To prevent duplicate traversal leading to infinite loops
   - Also, to keep one for one clone. See the code if required
-### Walls and Gates
-You are given a m × n 2D grid initialized with these three possible values:
-
--1 - A water cell that can not be traversed.
-0 - A treasure chest.
-INF - A land cell that can be traversed. We use the integer 2^31 - 1 = 2147483647 to represent INF.
-Fill each land cell with the distance to its nearest treasure chest. If a land cell cannot reach a
-treasure chest than the value should remain INF.
-
-Assume the grid can only be traversed up, down, left, or right.
-
-````json
-  "Input": [
-    [2147483647,-1,0,2147483647],
-    [2147483647,2147483647,2147483647,-1],
-    [2147483647,-1,2147483647,-1],
-    [0,-1,2147483647,2147483647]
-  ]
-  
-  "Output": [
-    [3,-1,0,1],
-    [2,2,1,-1],
-    [1,-1,2,-1],
-    [0,-1,3,4]
-  ]
-````
+## Walls and Gates
 #### Intuitions & Solutions
 - Ok, this is BFS!! Why? you have to find the shortest distance / unweighted graph
 - Then since it is for multiple sources, this is multi source BFS
@@ -242,129 +153,162 @@ Assume the grid can only be traversed up, down, left, or right.
 - Add all treasure as source to queue
 - Do a BFS on unvisited nodes
 - <b>If you have already visited a land cell, other farthest cells would not overwrite visited cells</b>
-### Pacific Atlantic Water Flow
-You are given a rectangular island heights where heights[r][c] represents the height above sea level of the cell at coordinate (r, c).
+## Pacific Atlantic Water Flow
 
-The islands borders the Pacific Ocean from the top and left sides, and borders the Atlantic Ocean from the bottom and right sides.
-
-Water can flow in four directions (up, down, left, or right) from a cell to a neighboring cell with height equal or lower. Water can also flow into the ocean from cells adjacent to the ocean.
-
-Find all cells where water can flow from that cell to both the Pacific and Atlantic oceans. Return it as a 2D list where each element is a list [r, c] representing the row and column of the cell. You may return the answer in any order.
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/3899fae1-ab18-4d6b-15b4-c7f7aa224700/public" alt="Undirected Graph"/>
-  <br>
-  <i></i>
-</p>
-
-```
-  Input: heights = [
-    [4,2,7,3,4],
-    [7,4,6,4,7],
-    [6,3,5,3,6]
-  ]
-  
-  Output: [[0,2],[0,4],[1,0],[1,1],[1,2],[1,3],[1,4],[2,0]]
-
-```
-
-### Course Schedule
-You are given an array prerequisites where prerequisites[i] = [a, b] indicates that you must take course b first if you want to take course a.
-
-The pair [0, 1], indicates that must take course 1 before taking course 0.
-
-There are a total of numCourses courses you are required to take, labeled from 0 to numCourses - 1.
-
-Return true if it is possible to finish all courses, otherwise return false.
-```
-  Input: numCourses = 2, prerequisites = [[0,1]]
-  Output: true //Explanation: First take course 1 (no prerequisites) and then take course 0.
-  Input: numCourses = 2, prerequisites = [[0,1],[1,0]]
-  Output: false // Explanation: In order to take course 1 you must take course 0,
-  and to take course 0 you must take course 1. So it is impossible.
-```
+## Course Schedule
 #### Intuitions & Solution
 - Build a cycle detection DFS and have a stack for topo sort
 - if cycle detected,then false
 - if stack size is not node size, then false
-### Course Schedule II
-You are given an array prerequisites where prerequisites[i] = [a, b] indicates that you must take course b first if you want to take course a.
+## Course Schedule II
 
-For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.
-There are a total of numCourses courses you are required to take, labeled from 0 to numCourses - 1.
-
-Return a valid ordering of courses you can take to finish all courses. If there are many valid answers, return any of them. If it's not possible to finish all courses, return an empty array.
-```
-  Input: numCourses = 3, prerequisites = [[1,0]]
-  
-  Output: [0,1,2]
-  Explanation: We must ensure that course 0 is taken before course 1.
-```
 #### Intuitions & Solution
 - Build a cycle detection DFS and have a stack for topo sort
 - if cycle detected,then false
 - if stack size is not node size, then false
 - else return stack popped list.
-### Course Schedule IV
-There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course ai first if you want to take course bi.
+## Course Schedule IV
 
-For example, the pair [0, 1] indicates that you have to take course 0 before you can take course 1.
-Prerequisites can also be indirect. If course a is a prerequisite of course b, and course b is a prerequisite of course c, then course a is a prerequisite of course c.
+## Find the Town Judge
 
-You are also given an array queries where queries[j] = [uj, vj]. For the jth query, you should answer whether course uj is a prerequisite of course vj or not.
+#### Intuition & Solution
+  - Think about in-degree and out-degree of this connections
+  - The judge should have 0 out and n-1 in
+  - Else you can't make it
 
-Return a boolean array answer, where answer[j] is the answer to the jth query.
-<p align="center" style="width:50vw">
-  <img src="https://assets.leetcode.com/uploads/2021/05/01/courses4-1-graph.jpg" alt="Undirected Graph"/>
-  <br>
-  <i></i>
-</p>
+## Count Sub Islands
+https://leetcode.com/problems/count-sub-islands/description/
+### Intuitions & Solution
+- Ok, you already know this grouping thing comes under DFS
+- the second one's island should also be a island in first one
+- So, DFS on second ones cells, use grid1's to decide to move on
+- mark cells as zero to remember visited stuff
+- finally return the count of islands which are there in both the grids
 
+## Reorder Routes to Make All Paths Lead To The City (Code this when free, seems like a challenge)
+### Intuitions & Solution
+- New trick alert here.
+- Consider this as an undirected graph and add false edges to adj list
+- To identify the false edges, use negative (assuming all are positive nodes)
+- Do a BFS from zero, if u see a false edge as incoming, then add count
+- Hola!
+## Snakes and Ladders (Code this when free, seems like a challenge)
+https://leetcode.com/problems/snakes-and-ladders/
+#### Intuitions & Solution
+- Ok brother, here we go!
+- Shortest path, so BFS
+- your possible moves are n+(1to6)
+- whenever u land a cell, check for snakes/ladders and move into proper result position
+- when u land at final destination, return count
+## Open The Lock
+https://leetcode.com/problems/open-the-lock/description/
+#### Intuitions & Solution
+- Yep, we got it.
+- Minimum moves so BFS
+- your start node is 0000
+- possible moves are each digit one up, If its 9 then 0
+- If it's not in deadlock then only add it in next iteration
+- you will get the count now
+- New trick alert
+- For leveled BFS, you can add another while loop too
+``` scala
+int level=0;
+        while(!queue.isEmpty())
+        {
+            int size =queue.size();
+            while(size-- >0)
+            {
+                String current =queue.poll();
+                if(deadendSet.contains(current))continue;
+                if(current.equals(target)) return level;
+
+                List <String> nextop= nextOptions(current);
+                for(String op : nextop)
+                {
+                    if(!visited.contains(op))
+                    {
+                        queue.offer(op);
+                        visited.add(op);
+                    }
+                }
+            }
+            level++;
+        }
 ```
-  Input: numCourses = 2, prerequisites = [[1,0]], queries = [[0,1],[1,0]]
-  Output: [false,true]
-  Explanation: The pair [1, 0] indicates that you have to take course 1 before you can take course 0.
-  Course 0 is not a prerequisite of course 1, but the opposite is true.
-```
-### Find the Town Judge
-In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge.
+## Find Eventual Safe States (Code this when free, seems like a challenge)
+https://leetcode.com/problems/find-eventual-safe-states/description/
+#### Intuitions & Solution
+- These are the questions which might duck you, Also new trick alert
+- This involves a BFS similar approach
+- Start with nodes with no outdegrees, add them to the queue
+- Maintain  a reverse adjacency list, when there is 0->1   have 1->0
+- poll and add them to safe state
+- Get indegrees of that node, reduce the outdegree of them by 1, since we removed the leaf
+- If the new outdegree is 0, add them to queue
+- do shit while queue is empty
 
-If the town judge exists, then:
+## Graph Valid Tree
+https://neetcode.io/problems/valid-tree
+#### Intuitions & Solution
+- A Tree is a connected graph with no cycles
+- These are undirected edges, and we need to find connection and cycles, we can use union find.
+- There is a slight trick here for checking connected condition
+- There should be n-1 edges as input, if less or more it's a problem
+- If equals with cycle edge, union will find it.
+## Check If Move Is Legal (Code this when free, seems like a challenge)
+https://leetcode.com/problems/check-if-move-is-legal/description/
+#### Intuitions & Solution 
+- It's like the island thingy so, DFS.
+- Have all the directions handy in a list, pass it to DFS, because once u go there you have to go in that direction only!!
+- Don't pass the next row and make it complicated, pass the current cell and going directed, so propagate for all non '.' neighbors
+- If its the same color but the length of the color is <=2, then false
+- Else if less then 2
+- If '.' neighbor then return false;
+- If its diff color, move on with increasing length
+- New trick alert!!! When they ask only one condition is enough on iterations, don't wait on all, return or break out immediately after one satisfaction
+## Shortest Bridge (Code this when free)
+https://leetcode.com/problems/shortest-bridge/description/
+#### Intuitions & Solution
+- Shortest Path, Hands down BFS
+- Advantage here is we know there are exactly 2 islands
+- Have a visited grid array or mark one island with #
+- Do a multi source BFS with all cells on the island to find the closest 1.
+- Track the levels and get it tiger
+## Shortest path in binary matrix
+https://leetcode.com/problems/shortest-path-in-binary-matrix/description/
+#### Intuitions & Solution
+- This is simple BFS
+- The path should all be zero, so if top left or bottom right is not zero return false
+- If there is single element and its zero, return true <b>Learn/Focus on Edge cases</b>
+- New Trick !!! You can pass lengths in queue when doing BFS too.
+- Do BFS in all directions, if u reached bottom left return length
+## Number of connected components in an undirected graph
+https://neetcode.io/problems/count-connected-components
+#### Intuitions & Solution
+- This is exactly why we have union-find
+- Do union on all edges
+- Unique parents on parent array is the count
+- Always use your DS1 class, read it!!!
+## Redundant connection
+https://neetcode.io/problems/redundant-connection
+#### Intuitions & Solution
 
-- The town judge trusts nobody.
-- Everybody (except for the town judge) trusts the town judge.
-- There is exactly one person that satisfies properties 1 and 2.  
-
-You are given an array trust where trust[i] = [ai, bi] representing that the person labeled ai trusts the person labeled bi.  
-If a trust relationship does not exist in trust array, then such a trust relationship does not exist.
-
-Return the label of the town judge if the town judge exists and can be identified, or return -1 otherwise.
-### Count Sub Islands
-### Reorder Routes to Make All Paths Lead To The City
-### Snakes and Ladders
-### Open The Lock
-### Find Eventual Safe States
-### Graph Valid Tree
-### Check If Move Is Legal
-### Shortest Bridge
-### Shortest path in binary matrix
-### Number of connected components in an undirected graph
-### Redundant connection
-### Accounts merge
-### Find the closest node to given two node
-### As Far from Land as Possible
-### Shortest Path with Alternating Colors
-### Minimum Fuel Cost to Report to the Capital
-### Minimum Score of a Path Between Two Cities
-### Number of Enclaves
-### Minimum Number of Vertices to Reach all Nodes
-### Is Graph Bipartite?
-### Detonate the Maximum Bombs
-### Minimum Height Trees
-### Path with Maximum Gold
-### Word Ladder
-### Reconstruct Itinerary
-### Min Cost to Connect All Points
-### Network Delay Time
-### Swim In Rising Water
-### Alien Dictionary
-### Cheapest Flights Within K Stops
+## Accounts merge
+## Find the closest node to given two node
+## As Far from Land as Possible
+## Shortest Path with Alternating Colors
+## Minimum Fuel Cost to Report to the Capital
+## Minimum Score of a Path Between Two Cities
+## Number of Enclaves
+## Minimum Number of Vertices to Reach all Nodes
+## Is Graph Bipartite?
+## Detonate the Maximum Bombs
+## Minimum Height Trees
+## Path with Maximum Gold
+## Word Ladder
+## Reconstruct Itinerary
+## Min Cost to Connect All Points
+## Network Delay Time
+## Swim In Rising Water
+## Alien Dictionary
+## Cheapest Flights Within K Stops
