@@ -107,7 +107,7 @@ Can be used for
 - ### Kruskal's Also
 
 ## Problems & Learnings
-## Rotten Oranges
+### Rotten Oranges
 
 #### Intuitions & Solution
 - You have to spread from a point/group, so BFS
@@ -116,7 +116,7 @@ Can be used for
 - Do **BFS with levels by queue size** so that you know each step
 - Have an array of possible move offsets
 
-## Surrounded Regions
+### Surrounded Regions
 
 #### Intuitions & Solution
 - You had to think a little different here
@@ -127,16 +127,16 @@ Can be used for
 - You will have a grid of O,X and #
 - replace Os with X for the goal, replace # with O to restore original grid
 
-## Number of Islands
+### Number of Islands
 ####  Intuitions & Solution
 - It's a dfs code for sure. Why? You have to drill down to the island
 - You should have offset. to see possible moves, Also keep track of count in dfs.
 - And have a visitedSet, actually mark cells as zero for visited,
 - <b>Remember, For noting 2-Dimensions as visited, use a 2D array</b>
 - For every break in the outer iteration / every return from DFS, you keep adding counts
-## Max Area of Island
+### Max Area of Island
 
-## Clone Graph
+### Clone Graph
 
 #### Intuitions & Solution
 - Alright, we're doing a dfs and going deep into the given node
@@ -145,7 +145,7 @@ Can be used for
 - Also have a Map of original node to cloned nodes for the following reasons
   - To prevent duplicate traversal leading to infinite loops
   - Also, to keep one for one clone. See the code if required
-## Walls and Gates
+### Walls and Gates
 #### Intuitions & Solutions
 - Ok, this is BFS!! Why? you have to find the shortest distance / unweighted graph
 - Then since it is for multiple sources, this is multi source BFS
@@ -153,30 +153,30 @@ Can be used for
 - Add all treasure as source to queue
 - Do a BFS on unvisited nodes
 - <b>If you have already visited a land cell, other farthest cells would not overwrite visited cells</b>
-## Pacific Atlantic Water Flow
+### Pacific Atlantic Water Flow
 
-## Course Schedule
+### Course Schedule
 #### Intuitions & Solution
 - Build a cycle detection DFS and have a stack for topo sort
 - if cycle detected,then false
 - if stack size is not node size, then false
-## Course Schedule II
+### Course Schedule II
 
 #### Intuitions & Solution
 - Build a cycle detection DFS and have a stack for topo sort
 - if cycle detected,then false
 - if stack size is not node size, then false
 - else return stack popped list.
-## Course Schedule IV
+### Course Schedule IV
 
-## Find the Town Judge
+### Find the Town Judge
 
 #### Intuition & Solution
   - Think about in-degree and out-degree of this connections
   - The judge should have 0 out and n-1 in
   - Else you can't make it
 
-## Count Sub Islands
+### Count Sub Islands
 https://leetcode.com/problems/count-sub-islands/description/
 ### Intuitions & Solution
 - Ok, you already know this grouping thing comes under DFS
@@ -185,14 +185,14 @@ https://leetcode.com/problems/count-sub-islands/description/
 - mark cells as zero to remember visited stuff
 - finally return the count of islands which are there in both the grids
 
-## Reorder Routes to Make All Paths Lead To The City (Code this when free, seems like a challenge)
+### Reorder Routes to Make All Paths Lead To The City (Code this when free, seems like a challenge)
 ### Intuitions & Solution
 - New trick alert here.
 - Consider this as an undirected graph and add false edges to adj list
 - To identify the false edges, use negative (assuming all are positive nodes)
 - Do a BFS from zero, if u see a false edge as incoming, then add count
 - Hola!
-## Snakes and Ladders (Code this when free, seems like a challenge)
+### Snakes and Ladders (Code this when free, seems like a challenge)
 https://leetcode.com/problems/snakes-and-ladders/
 #### Intuitions & Solution
 - Ok brother, here we go!
@@ -200,7 +200,7 @@ https://leetcode.com/problems/snakes-and-ladders/
 - your possible moves are n+(1to6)
 - whenever u land a cell, check for snakes/ladders and move into proper result position
 - when u land at final destination, return count
-## Open The Lock
+### Open The Lock
 https://leetcode.com/problems/open-the-lock/description/
 #### Intuitions & Solution
 - Yep, we got it.
@@ -235,7 +235,7 @@ int level=0;
             level++;
         }
 ```
-## Find Eventual Safe States (Code this when free, seems like a challenge)
+### Find Eventual Safe States (Code this when free, seems like a challenge)
 https://leetcode.com/problems/find-eventual-safe-states/description/
 #### Intuitions & Solution
 - These are the questions which might duck you, Also new trick alert
@@ -247,7 +247,7 @@ https://leetcode.com/problems/find-eventual-safe-states/description/
 - If the new outdegree is 0, add them to queue
 - do shit while queue is empty
 
-## Graph Valid Tree
+### Graph Valid Tree
 https://neetcode.io/problems/valid-tree
 #### Intuitions & Solution
 - A Tree is a connected graph with no cycles
@@ -255,7 +255,7 @@ https://neetcode.io/problems/valid-tree
 - There is a slight trick here for checking connected condition
 - There should be n-1 edges as input, if less or more it's a problem
 - If equals with cycle edge, union will find it.
-## Check If Move Is Legal (Code this when free, seems like a challenge)
+### Check If Move Is Legal (Code this when free, seems like a challenge)
 https://leetcode.com/problems/check-if-move-is-legal/description/
 #### Intuitions & Solution 
 - It's like the island thingy so, DFS.
@@ -266,7 +266,7 @@ https://leetcode.com/problems/check-if-move-is-legal/description/
 - If '.' neighbor then return false;
 - If its diff color, move on with increasing length
 - New trick alert!!! When they ask only one condition is enough on iterations, don't wait on all, return or break out immediately after one satisfaction
-## Shortest Bridge (Code this when free)
+### Shortest Bridge (Code this when free)
 https://leetcode.com/problems/shortest-bridge/description/
 #### Intuitions & Solution
 - Shortest Path, Hands down BFS
@@ -274,7 +274,7 @@ https://leetcode.com/problems/shortest-bridge/description/
 - Have a visited grid array or mark one island with #
 - Do a multi source BFS with all cells on the island to find the closest 1.
 - Track the levels and get it tiger
-## Shortest path in binary matrix
+### Shortest path in binary matrix
 https://leetcode.com/problems/shortest-path-in-binary-matrix/description/
 #### Intuitions & Solution
 - This is simple BFS
@@ -282,40 +282,95 @@ https://leetcode.com/problems/shortest-path-in-binary-matrix/description/
 - If there is single element and its zero, return true <b>Learn/Focus on Edge cases</b>
 - New Trick !!! You can pass lengths in queue when doing BFS too.
 - Do BFS in all directions, if u reached bottom left return length
-## Number of connected components in an undirected graph
+### Number of connected components in an undirected graph
 https://neetcode.io/problems/count-connected-components
 #### Intuitions & Solution
 - This is exactly why we have union-find
 - Do union on all edges
 - Unique parents on parent array is the count
 - Always use your DS1 class, read it!!!
-## Redundant connection
+### Redundant connection
 https://neetcode.io/problems/redundant-connection
 #### Intuitions & Solution
 - Bro, undirected redundant edge is cycle, union find all the way
 - do union on all edges
 - First edge to present cycle, is the culprit
-## Accounts merge (Code this when free, seems like a challenge)
+### Accounts merge (Code this when free, seems like a challenge)
 https://leetcode.com/problems/accounts-merge/description/
 #### Intuitions & Solution
 - Took a while to understand this is a connected component problem on union disjoint 
 - Since these aren't 'n' nodes, make DS1 implementation on a HashMap
 - Also have a email to name map.
-## Find the closest node to given two node  (Code this when free, seems like a challenge)
-## As Far from Land as Possible
-## Shortest Path with Alternating Colors
-## Minimum Fuel Cost to Report to the Capital
-## Minimum Score of a Path Between Two Cities
-## Number of Enclaves
-## Minimum Number of Vertices to Reach all Nodes
-## Is Graph Bipartite?
-## Detonate the Maximum Bombs
-## Minimum Height Trees
-## Path with Maximum Gold
-## Word Ladder
-## Reconstruct Itinerary
-## Min Cost to Connect All Points
-## Network Delay Time
-## Swim In Rising Water
-## Alien Dictionary
-## Cheapest Flights Within K Stops
+### Find the closest node to given two node  (Code this when free, seems like a challenge)
+### As Far from Land as Possible  (Code this when free, seems like a challenge)
+https://leetcode.com/problems/as-far-from-land-as-possible/description/
+#### Intuitions & Solution
+- New Trick Alert!!!
+- This is also BFS, but here we need the max distance
+- Multi-source BFS from all 1s
+- When u meet a zero increase the distance by 1, (you are overriding cell values for distances)
+- move to until u have 0s in ur four direction
+- have a max global variable
+### Shortest Path with Alternating Colors (Code this when free, seems like a challenge)
+https://leetcode.com/problems/shortest-path-with-alternating-colors/description/
+#### Intuitions & Solution
+- New Trick alert
+- BFS all the way bruh
+- But have two adj list
+- Start with 0 and add (0,0,0) and (0,0,1)  first one is node, second is distance and last one is color
+- If the current color is red, then do BFS on blue vice-versa
+### Minimum Fuel Cost to Report to the Capital
+https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital/
+#### Intuitions & Solution
+- Dead meat Alert!!
+- This made u doubt your life
+- YOU thought a lot about BFS
+- But this is DFS
+- You need to start your ride from the end nodes to source
+- Bottom up
+- Also, u need to pass information from every node to next
+- There was a formula fucking read that //TODO still don't know
+- For every person, calculate number of persons start with 1 and add bottom up
+- You have number of persons, number of seats, calculate fuel burnt for next stop
+- when u reach the one stop before destination, which is > 0 here 
+### Minimum Score of a Path Between Two Cities
+https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/description/
+#### Intuitions & Solution
+- undirected graph
+- it is asking for a minimum edge (score) in the path
+- So u can just do union find and keep track of min edge weight
+- when its over, get the min edge of the parent of 1 & n
+###  Number of Closed Islands
+https://leetcode.com/problems/number-of-closed-islands/description/
+#### Intuitions & Solution
+- Alrighty, So if u eliminate all the zeros which shares border
+- All u have is zeros surrounded by 1s
+- then count island with DFS and return
+### Number of Enclaves
+https://leetcode.com/problems/number-of-enclaves/description/
+#### Intuitions & Solution
+- Same as last one
+### Minimum Number of Vertices to Reach all Nodes
+https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/description/
+#### Intuitions & Solution
+- Any node with indegree can always be traversed from other nodes
+- Any node with no indegree, should be traversed fro sure
+- So the answer is just the nodes with zero in-degree
+### Is Graph Bipartite?
+
+### Detonate the Maximum Bombs
+### Minimum Height Trees
+### Path with Maximum Gold
+https://leetcode.com/problems/path-with-maximum-gold/description/
+#### Intuitions & Solution
+- Ok, there is no start or end constraint here
+- just do DFS start with gold and end with gold
+- don't go to 0s and visited nodes
+- keep track of max gold collected 
+### Word Ladder
+### Reconstruct Itinerary
+### Min Cost to Connect All Points
+### Network Delay Time
+### Swim In Rising Water
+### Alien Dictionary
+### Cheapest Flights Within K Stops
