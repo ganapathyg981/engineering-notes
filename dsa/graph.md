@@ -107,6 +107,9 @@ Can be used for
 - ### Kruskal's Also
 
 ## Problems & Learnings
+### Minimum Height Trees
+### Pacific Atlantic Water Flow
+### Course Schedule IV
 ### Rotten Oranges
 
 #### Intuitions & Solution
@@ -153,7 +156,6 @@ Can be used for
 - Add all treasure as source to queue
 - Do a BFS on unvisited nodes
 - <b>If you have already visited a land cell, other farthest cells would not overwrite visited cells</b>
-### Pacific Atlantic Water Flow
 
 ### Course Schedule
 #### Intuitions & Solution
@@ -161,16 +163,13 @@ Can be used for
 - if cycle detected,then false
 - if stack size is not node size, then false
 ### Course Schedule II
-
 #### Intuitions & Solution
 - Build a cycle detection DFS and have a stack for topo sort
 - if cycle detected,then false
 - if stack size is not node size, then false
 - else return stack popped list.
-### Course Schedule IV
 
 ### Find the Town Judge
-
 #### Intuition & Solution
   - Think about in-degree and out-degree of this connections
   - The judge should have 0 out and n-1 in
@@ -301,7 +300,6 @@ https://leetcode.com/problems/accounts-merge/description/
 - Took a while to understand this is a connected component problem on union disjoint 
 - Since these aren't 'n' nodes, make DS1 implementation on a HashMap
 - Also have a email to name map.
-### Find the closest node to given two node  (Code this when free, seems like a challenge)
 ### As Far from Land as Possible  (Code this when free, seems like a challenge)
 https://leetcode.com/problems/as-far-from-land-as-possible/description/
 #### Intuitions & Solution
@@ -357,9 +355,22 @@ https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/desc
 - Any node with no indegree, should be traversed fro sure
 - So the answer is just the nodes with zero in-degree
 ### Is Graph Bipartite?
+https://leetcode.com/problems/is-graph-bipartite/description/
+#### Intuitions & Solution
+- The description was confusing and twisty
+- It is basically a graph coloring problem
+- If u color every node some color and next node to another.
+- and if u can make it possible throughout the graph, then it is bipartite
+- So for coloring you have to do a BFS with some twist
+- Take one color as -1, another as 1
+- Start with -1 as current  colo, multiply by -1  and set to current color for next color
+- you can have a map or array based on sparse or dense graph
 
 ### Detonate the Maximum Bombs
-### Minimum Height Trees
+https://leetcode.com/problems/detonate-the-maximum-bombs/
+#### Intuitions & Solution
+- Just find a way to if a bomb is reachable from another using formulas
+- Make an adjacency list and DFS for max island type
 ### Path with Maximum Gold
 https://leetcode.com/problems/path-with-maximum-gold/description/
 #### Intuitions & Solution
@@ -368,9 +379,67 @@ https://leetcode.com/problems/path-with-maximum-gold/description/
 - don't go to 0s and visited nodes
 - keep track of max gold collected 
 ### Word Ladder
+https://neetcode.io/problems/word-ladder
+#### Intuitions & Solution
+- Take deep breath Nanba
+- You have to change from one state to another, Also note that all words are same length
+- You have only some possible changes applicable
+- Check if end word exist in possibilities
+- Construct all possible changes e.g. cat -> *at, c*t, ca*
+- You should view this as a graph
+- You make a map of possibility and words applicable eg. *at -> (cat,sag,bag)
+- Also have a visited Set to avoid cycles
+- Do a BFS from start word.
+- Get all mutations and possible neighbor
+- Do until we find the end word and return count
 ### Reconstruct Itinerary
+https://neetcode.io/problems/reconstruct-flight-path
+#### Intuitions & Solution
+- Simple Topo sort nanba
+- Just that here u have to sort all adj nodes / have a pq
+- Start from JFK
 ### Min Cost to Connect All Points
+https://neetcode.io/problems/min-cost-to-connect-points
+#### Intuitions & Solution
+- New Trick Alert!!!
+- For all two combination, for i loop inside that i+1 loop
+- Prepare an adj list with all to all nodes
+- Calculate distance with formula and thats your edge weight
+- Put all edges in a PQ
+- Have a visited set and a node counter
+- while node counter <= actual node count
+- Pick minimum edges and add cost until add nodes are picked
 ### Network Delay Time
+https://neetcode.io/problems/network-delay-time
+#### Intuitions & Solution
+- Start From source node
+- Do Dijkstra also keep adding weights
+- You should keep a distance array to maintain min distance
+- It will be filled with INT_MAX for all and zero for source
+- Ans will be sum of distance array value
 ### Swim In Rising Water
+https://neetcode.io/problems/swim-in-rising-water
+####  Intuitions & Solution
+- Easy peasy!
+- Modified Dijkstra
+- Start with weight of (0,0),0,0
+- Have max weight in path and coordinates on PQ and do BFS
+- Track max weight encountered along the path
+- Return that max weight when reaching last node include last node's weight too
 ### Alien Dictionary
+https://neetcode.io/problems/foreign-dictionary
+####  Intuitions & Solution
+- Bro, just don't hesitate
+- Make an adj list with empty list for every unique letter in the list of words
+- Take two words at a time.
+- If first word is bigger than second and both starts with same char then invalid error
+- Find the first differing char add it as an edge
+- Do a Topo sort, Beware of cycles that make the thing invalid
+- Visited, Visiting, Unvisited
 ### Cheapest Flights Within K Stops
+https://neetcode.io/problems/cheapest-flight-path
+####  Intuitions & Solution
+- Dijkstra but with atmost k hops
+- Keep track of hops with double while technique or passing the hop in queue
+- Keep track of min distance with a distance array
+- Thats it MF
