@@ -271,7 +271,7 @@ https://leetcode.com/problems/shortest-bridge/description/
 - Shortest Path, Hands down BFS
 - Advantage here is we know there are exactly 2 islands
 - Have a visited grid array or mark one island with #
-- Do a multi source BFS with all cells on the island to find the closest 1.
+- Do a multi source BFS with all cells on the island to find the closest 1.ƒsnak
 - Track the levels and get it tiger
 ### Shortest path in binary matrix
 https://leetcode.com/problems/shortest-path-in-binary-matrix/description/

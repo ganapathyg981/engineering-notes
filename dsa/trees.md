@@ -20,34 +20,20 @@ You go through levels, you must use queue for doing this. 1239565 -> for above t
 - add left and right to queue
 
 ### Invert Binary Tree
-You are given the root of a binary tree root. Invert the binary tree and return its root.  
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/ac124ee6-207f-41f6-3aaa-dfb35815f200/public" alt="Sublime's custom image"/>
-<br>
-<i>Invert Binary Tree</i>
-</p>    
+#### Intuitions & Solution
 
 - Do DFS
-- swap left and right nodes and return node
+- swap left and right nodes (use temp var you idiot) and return node
 
 ### Max height of B'Tree
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/5ea6da77-7e43-43e0-dd9d-e879ca0b1600/public" alt="Sublime's custom image"/>
-<br>
-<i>height is 3</i>
-</p>  
+#### Intuitions & Solution
 
 - Do DFS
 - base case at null node return 0
 - then return max(1+height(left) & 1+height(right))
 
 ### Same Tree
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/e78fc10c-4692-471f-5261-61e9be4f3a00/public" alt="Sublime's custom image"/>
-<br>
-<i>They are same</i>
-</p>   
-
+#### Intuitions & Solution
 - Do DFS on both root nodes
 - base case return true if both tails are null
 - if either is not null and one is null, return false
@@ -55,11 +41,7 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 - return on same(left) and same(right)
 
 ### Sub-tree 
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/2991a77a-9664-46ed-528d-019e392f7400/public" alt="Sublime's custom image"/>
-<br>
-<i>Sub tree is present</i>
-</p>  
+#### Intuitions & Solution
  
 - Do DFS top down approach
 - base case when you reach main's leaf and you still didnt find shit.. then return false
@@ -68,11 +50,7 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 - return  isSubTree(left) || isSubTree(right)  
 
 ### Lowest Common Ancestor of BST
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/2080ee6a-3d27-4cd5-0db2-07672ead8200/public" alt="Sublime's custom image"/>
-<br>
-<i>LCA of 1 & 4 is 3, LCA of 3 & 1 is 3, LCA of 1 and 9 is 5</i>
-</p>  
+#### Intuitions & Solution
 
 - Since it's a BST you can do some time saving, but below is basic code
 - Do a DFS with bottom up
@@ -87,16 +65,7 @@ You are given the root of a binary tree root. Invert the binary tree and return 
 you can ignore to call a left node and return null if left is > a&&b same other way  
 
 ### Valid BST
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/18f9a316-8dc2-4e11-d304-51204454ac00/public" alt="Sublime's custom image"/>
-<br>
-<i>Yes! it's a BST</i>
-</p>  
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/6f14cb8d-efad-4221-2beb-fba2b19c8a00/public" alt="Sublime's custom image"/>
-<br>
-<i>No shit!</i>
-</p>    
+#### Intuitions & Solution
 
 - ok.. so the trick part is, not only left<root<right
 - also all stuff under left should be lesser than root
@@ -109,11 +78,7 @@ you can ignore to call a left node and return null if left is > a&&b same other 
 - when you go to a right node left will become current
 
 ### Kth smallest element in BST
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/dca6c42d-2327-4036-f7f2-3e99d8203100/public" alt="Sublime's custom image"/>
-<br>
-<i>1st smallest is 2, 2nd smallest is 3</i>
-</p>  
+#### Intuitions & Solution
 
 - as we came to know before, inorder is in sorted for BST
 - take in a state having the output and counter for inorder
@@ -121,38 +86,68 @@ you can ignore to call a left node and return null if left is > a&&b same other 
 - if(counter =k) return that output
 
 ### Construct tree from inorder and preorder
-<p align="center" style="width:50vw">
-  <img src="dssdsdsd" alt="Sublime's custom image"/>
-<br>
-<i>sdsdsdsdsd</i>
-</p>    
+#### Intuitions & Solution
 
 ### Binary Tree Maximum Path Sum
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/9896b041-9021-44c2-ab3e-5cff76adf100/public" alt="Sublime's custom image"/>
-<br>
-<i>max path is 6 </i>
-</p>  
-
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/19ce1187-387e-4323-f2c9-1a317ab36200/public" alt="Sublime's custom image"/>
-<br>
-<i>max path is 4 </i>
-</p>  
+#### Intuitions & Solution
+- Alright, This is after some long time, writing helps, keep doin
+- Trick part here is you have negative numbers which sometimes grills you
+- So whenever a subtree sum is negative ignore it (Math.max(0,left+val))
+- keep track of max sum, you might lose it midway too
+- left  = max(0,func(left))  right  = max(0,func(right))
+- cur = val+left+right
+- return val+max(left,right)
 
 
 ### Equal partition sum
+#### Intuitions & Solution
+- Get the whole sum of tree
+- Divide by 2
+- If you get a sub-tree with half of the sum, its there
 
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/9896b041-9021-44c2-ab3e-5cff76adf100/public" alt="Sublime's custom image"/>
-<br>
-<i>1 and 2 is a sub tree, 3 is a subtree, their sums are equal </i>
-</p> 
+### Binary Tree Right Side View
+#### Intuitions & Solution
+- Do BFS
+- Last element of each level is right view
 
+### Count Good Nodes in Binary Tree
+#### Intuitions & Solution
+- DFS and drill down the largest node
+- whenever you encounter the even largest, count increment
+
+### Serialize And Deserialize Binary Tree
+#### Intuitions & Solution
+- We should write two methods, one to encode as string and decode from string
+- The trick is we need to factor in nulls
+- use commas to separate nodes with commas value, or *,
+
+### Collect Apples Minimum Time
+#### Intuitions & Solution
+- Go bottom up in this
+- Coz you wanna calculate apple numbers from bottom
+- Base case 0
+- if apple found or prev return values >0 (coz we found an apple earlier and we have to take it to top), return 2
+- init 0 before recursion
+- accumulate sum of return values
+
+### Inform Employees Max time
+#### Intuitions & Solution
+- Go top down in this
+- Coz info pass from manager to subs
+- Keep track of max time
+- Pass currentTime in args
+- return max of all times, for that keep a 0 init var
+
+### Sum of numbers if each number is root to leaf
+- Go top down in this
+- Coz you can pass the first digit everytime and multiply by 10
+- At last return the one number
+- Pass each number in args
+- return sum of all numbers returned which is left+right
+### Smallest String
+- Go top down in this
+- Coz you can prepend everytime to build the string
+- At the end return the string
+- compare the smallest and return out // refer code once
 ### Unique BST 2
-
-<p align="center" style="width:50vw">
-  <img src="https://imagedelivery.net/CLfkmk9Wzy8_9HRyug4EVA/9896b041-9021-44c2-ab3e-5cff76adf100/public" alt="Sublime's custom image"/>
-<br>
-<i>max path is 6 </i>
-</p> 
+#### Intuitions & Solution

@@ -25,6 +25,9 @@ You will have these three things
 info is passed from top to bottom
 - you populate the base case and send it along down and return that shit
 - first process then do recursive call
+- You always mostly return plain numbers for both edge case
+- The output will be argument which is the accumulator
+- if u want for multiple branches then just sum, max, or of left and right
 
 
 ## Bottom Up

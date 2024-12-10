@@ -1,7 +1,9 @@
 package tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class UniqueBinaryTree2 {
     public static List<TreeNode> generateTrees(int n) {
@@ -40,10 +42,40 @@ public class UniqueBinaryTree2 {
     }
 
     public static void main(String[] args) {
-        List<TreeNode> treeNodes = generateTrees(3);
+        Integer[] arr = {1, 2, 3, 4, 5, null, 8, null, null, 6, 7, 9};
+        TreeNode root = initTree(arr);
+//        TreeNode.levelOrder(root);
+        TreeNode.inorder(root);
 
-        treeNodes.forEach(treeNode -> TreeNode.printTree(treeNode));
+    }
 
+    public static TreeNode initTree(Integer[] arr) {
+        if (arr == null || arr.length == 0 || arr[0] == null) return null;
+
+        TreeNode root = new TreeNode(arr[0]);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        int i = 1;
+        while (!queue.isEmpty() && i < arr.length) {
+            TreeNode currentNode = queue.poll();
+
+            // Assign left child
+            if (i < arr.length && arr[i] != null) {
+                currentNode.left = new TreeNode(arr[i]);
+                queue.offer(currentNode.left);
+            }
+            i++;
+
+            // Assign right child
+            if (i < arr.length && arr[i] != null) {
+                currentNode.right = new TreeNode(arr[i]);
+                queue.offer(currentNode.right);
+            }
+            i++;
+        }
+
+        return root;
     }
 
 }
