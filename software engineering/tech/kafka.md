@@ -1,0 +1,32 @@
+# Kafka
+- Distributed Event Streaming platform - Highly Scalable, Fault Tolerant
+- Publish Subscribe System on a topic
+- TCP network protocol
+- There will be servers and clients
+- Brokers are the servers, They have the storage layer
+- We pass events/Messages
+- Clients are either producers or consumers
+- Decoupled Clients
+- Message Delivery Settings
+  - At most once—Messages may be lost but are never redelivered.
+  - At least once—Messages are never lost but may be redelivered. 
+  - Exactly once—this is what people actually want, each message is delivered once and only once.
+- Events are organized and stored in topics
+- Topics are partitioned into buckets, Topic can be distributed over brokers for scalability
+- Topics can be replicated for fault tolerance  even across geo-regions or datacenters
+- Events get appended to a partition
+- Event Retention can be done
+- Rewind and replay can be done with offsets
+- Ordering can be promised on a partition in a topic
+- Built on JVM
+- Its on some page cache / uses disk 
+- Append only data for O(1) and BTree for metadata
+- 
+- Main APIs
+  - Admin API
+  - Producer API
+  - Consumer API
+  - Streaming API (See this)
+  - Connect API
+
+## Use cases
