@@ -1,6 +1,16 @@
 # Arrays and Hashing
 - Can store same type data in continuous memory
 - Randomly access elements
+## Techniques
+- ### Getting sub-array contiguous
+  - Run a double for loop
+  - from 0->n as i
+  - from i->n as j
+  - the i->j is now your sub-array
+- ### Prefix/Suffix arrays
+  - Useful for cumulative computation over an array left->right or vice-versa
+  - example [1,2,-3,4]
+  - [1,1,-3,-3] is the prefix minimum array
 ## Intuitions
 - Find duplicates -> use set
 - Find frequency -> use map

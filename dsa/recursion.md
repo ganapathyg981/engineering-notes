@@ -1,7 +1,10 @@
-# Recursion 
+# Recursion
+
 
 ## Basic Things
 You will have these three things
+- Function calls itself
+- Stack exists to keep track
 - A condition to stop the recursion
 - Calling recursion with smaller/cut inputs for all possible branches
 - Perform the analysis you have to do either b4 or after the recursion call based on your needs
@@ -21,12 +24,12 @@ You will have these three things
 - for void, it just stops the recursion
 - for other return types, it stops the recursion. but also, sends some data to the parent call
 
-## Top Down
+## Top Down (Parameterized)
 info is passed from top to bottom
 - you populate the base case and send it along down and return that shit
 - first process then do recursive call
 - You always mostly return plain numbers for both edge case
-- The output will be argument which is the accumulator
+- #### The output will be argument which is the accumulator
 - if u want for multiple branches then just sum, max, or of left and right
 
 
