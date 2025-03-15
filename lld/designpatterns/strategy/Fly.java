@@ -1,6 +1,6 @@
 package strategy;
 
-public class Fly implements FlyBehaviour{
+public class Fly implements FlyBehaviour {
     @Override
     public void fly() {
         System.out.println("I just flew");

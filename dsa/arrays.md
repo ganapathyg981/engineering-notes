@@ -11,6 +11,12 @@
   - Useful for cumulative computation over an array left->right or vice-versa
   - example [1,2,-3,4]
   - [1,1,-3,-3] is the prefix minimum array
+- ### Bucket Sort
+- ### Majority voting algorithm
+- ### Repeated element finding, marking negative technique
+- ### Heaps for getting max element always
+- ### If you need top K element, maintain the heap size to be k
+- ### Range sum or any range computation, Use prefix sum 0 to range end - 0 to range start
 ## Intuitions
 - Find duplicates -> use set
 - Find frequency -> use map

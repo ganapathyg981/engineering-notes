@@ -1,7 +1,7 @@
 package strategy;
 
 public class PlasticDuck extends Duck {
-    PlasticDuck(){
+    PlasticDuck() {
         flyBehaviour = new NoFly();
     }
 }

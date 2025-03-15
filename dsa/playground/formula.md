@@ -1,0 +1,1 @@
+n * (n – 1) // 2   https://leetcode.com/problems/number-of-good-pairs/description/
