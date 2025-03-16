@@ -1,0 +1,55 @@
+Actors
+- Person (User, Moderator, Admin)
+    - name (unique)
+    - id (unique)
+    - password
+    - reputation_score (gte 20, then only they can comment)
+Entities
+- Question
+    title
+    desc
+    tags (min 1)
+    hasAcceptedAnswer
+    answer
+    comment
+    vote
+    createdAt
+    updatedAt
+- Answer
+    content
+    comments
+    vote	+10 for an upvoted answer
+        	•	-2 for a downvoted answer
+        	•	+15 for an accepted answer
+    isAccepted
+        createdAt
+        updatedAt
+
+- Comment
+    userid
+    text
+    createdAt
+    updatedAt
+
+- Tag
+    id
+    name
+
+
+Actions
+User can edit profile
+Create user with role
+Reset password via email
+delete or dectivate account by user
+
+
+
+
+update questions/delete questions
+delete answers if no votes
+
+
+Search questuons by tag, title, description, user, daterange
+Sort questions by mostvoted, newest, unanswered, question with accepted answered
+Notifications - new answer to their question, comment on their question/answer
+            , if their answer got accepted, if their answer/question got upvote/downvote, subscribe to tags /questions

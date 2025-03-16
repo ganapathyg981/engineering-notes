@@ -26,7 +26,7 @@ public class CarService {
                     .licensePlateNumber("TN-10-AB-00" + i)
                     .fuelType(FuelType.PETROL)
                     .transmissionType(TransmissionType.AUTOMATIC)
-                    .pricePerHour(100.0F + i * 10)
+                    .pricePerHour(90F)
                     .carModel(carModel)
                     .features(features)
                     .branchName("G")
@@ -34,7 +34,7 @@ public class CarService {
 
             // Randomly add GPS feature
             if (i % 2 == 0) {
-                car = new GPSFeature(car);
+                car = new GPSFeature(new GPSFeature(car));
             }
             carList.add(car);
         }

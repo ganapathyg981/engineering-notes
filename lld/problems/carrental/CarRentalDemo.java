@@ -32,6 +32,7 @@ public class CarRentalDemo {
 
         System.out.println(bookingStatus);
         carSearchItems = carRentalService.searchForCar(carSearchQuery);
+        carSearchItems.forEach(carSearchItem -> System.out.println(carSearchItem.getPrice()));
         System.out.println(carSearchItems.size());
     }
 }

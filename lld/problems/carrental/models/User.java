@@ -1,5 +1,9 @@
 package models;
 
+import stackoverflow.models.Question;
+
+import java.util.List;
+
 public class User {
     private String id;
     private String name;
