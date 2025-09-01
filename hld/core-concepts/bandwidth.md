@@ -107,5 +107,3 @@ To optimize usage, I’d compress payloads, use pagination, and offload large da
 - It’s capped by **instance NIC hardware**
 - Don’t overfetch, compress data, and use CDNs
 - In interviews, show you know how to manage bandwidth constraints gracefully
-
----
