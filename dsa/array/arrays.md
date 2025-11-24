@@ -11,6 +11,11 @@
   - Useful for cumulative computation over an array left->right or vice-versa
   - example [1,2,-3,4]
   - [1,1,-3,-3] is the prefix minimum array
+- ### Cycle/Cyclic sort
+  - Designed for arrays where numbers should ideally be at index = value - 1
+  - Place each number in its correct position via swaps
+  - Each cycle of misplaced elements is corrected independently
+  - Best use case: problems like First Missing Positive, Find Missing Numbers, Find Duplicate Numbers.
 - ### Bucket Sort
 - ### Majority voting algorithm
 - ### Repeated element finding, marking negative technique
@@ -20,6 +25,7 @@
 ## Intuitions
 - Find duplicates -> use set
 - Find frequency -> use map
+- The input or the output lies in 1 to n, 1to n+1 or bounded context then use cycle sort
 ## Problems
 ### Contains Duplicate
 Given an integer array nums, return true if any value appears more than once in the array, otherwise return false.
@@ -68,6 +74,12 @@ Output: [48,24,12,8]
 - keep right accumulator as 1, start from end and pickup numbers
 > [1 * (1 * 6 * 4 * 2), 1 * (1 * 6 * 4), 2 * (1 * 6), 8 * (1)]
 - output -> [48,24,12,8]
+### Find First Missing Positive
+#### Intuition & Solution
+- Answer lies in 1 to n+1, bcoz we need to find first missing positive, not all missing positive
+- Do cycle sort and place the elements in place if they are within 1 to n, where n is length of array
+- the first element which is not matching with index is the first missing element
+- if all matches, then its n+1
 ### Find Most K occurring elements
 ### String Encode and Decode
 ### Longest Consecutive sequence
