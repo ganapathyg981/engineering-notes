@@ -84,3 +84,11 @@ Output: [48,24,12,8]
 ### String Encode and Decode
 ### Longest Consecutive sequence
 ### Best time to buy and sell stocks
+### Word Subsets
+#### Intuitions & Solution
+- This is a **frequency requirement** type problem.
+- All words in `words2` act like **constraints** that must be merged.
+- Instead of checking each word separately, build **one combined requirement**.
+- Key idea → take **max frequency per character** across all words in `words2`.
+- Each word in `words1` only needs to satisfy this **one merged frequency rule**.
+- Reduces the entire problem to a simple **frequency comparison**.
